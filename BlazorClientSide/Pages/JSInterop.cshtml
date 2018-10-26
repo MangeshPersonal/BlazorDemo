@@ -1,0 +1,17 @@
+﻿@page "/JsInterop"
+
+@inherits JSInteropModel;
+<button onclick="@Prompt">Call Js</button>
+
+<button class="btn btn-primary" onclick="@CallCSMethod">Invoice  dotnet from js </button>
+<h1>@callingfromJavascript</h1>
+
+@functions{
+
+    
+
+    public  void Prompt()
+    {
+           JSRuntime.Current.InvokeAsync<string>("GreetingFunction.showalert", "Hello World !!");
+    }
+}

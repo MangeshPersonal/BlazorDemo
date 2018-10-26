@@ -1,0 +1,36 @@
+﻿
+@page  "/BindingDemo"
+@inherits DataBindingDemoModel
+@inject Microsoft.AspNetCore.Blazor.Services.IUriHelper UriHelper
+<h1> One Way Binding... </h1>
+
+
+
+<h1>@demostring</h1>
+
+<hr />
+<h1>Event Binding </h1>
+
+<button onclick="@ChangeGreeting">Event Binfing </button>
+
+<h2> After Event Binding  @demostring</h2>
+<hr />
+
+<h2> Two Way Binding </h2>
+<hr />
+<input type="text" bind="@demostring" />
+<h1>
+    Two Way Binding :: @demostring
+</h1>
+
+
+<button class="btn btn-primary" onclick="@GoTORouting"> Go to Router </button>
+
+@functions{
+
+    public void GoTORouting()
+    {
+        UriHelper.NavigateTo("/JsInterop");
+
+    }
+}

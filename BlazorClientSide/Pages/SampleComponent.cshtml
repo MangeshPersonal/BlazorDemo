@@ -1,0 +1,24 @@
+﻿@page "/Sample"
+
+@inherits SampleComponentModel
+
+
+
+<h1>Hello World From Sample @Name</h1>
+Enter your name: <input type="text" bind="@Name" /><br />
+
+
+Enter your name: <input type="text" bind="@SampleName" /><br />
+
+<h1>@SampleName</h1>
+<button onclick="@ChangeName">Click Me</button>
+
+@functions{
+
+    private string SampleName;
+    public void ChangeName()
+    {
+        Name = "Csharpcorner";
+    }
+
+}

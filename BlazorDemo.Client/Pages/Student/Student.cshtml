@@ -1,0 +1,29 @@
+﻿@page "/Student"
+
+@inherits StudentModel
+
+<h1>Student List</h1>
+
+<table>
+    <tr>
+        <td>1</td>
+        <td>Mangesh</td>
+        <td>G.</td>
+        <td><button class="btn btn-primary" onclick="" >Edit</button> </td>
+        <td>Edit</td>
+    </tr>
+</table>
+
+@functions{
+
+
+    public void EditStudent(int id )
+    {
+        JSRuntime.Current.InvokeAsync<string>("EditConfirmation.showalert");
+        if(AllowEditdelete)
+        {
+            
+        }
+    }
+
+}
